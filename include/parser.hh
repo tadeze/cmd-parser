@@ -160,7 +160,7 @@ class parser {
 
     ~parser() = default;
 
-    void eat_arguments(unsigned int argc, char const *argv[]);
+    void eat_arguments(unsigned int argc, char  *argv[]);
 
     option &add_option(std::string longoption, std::string shortoption);
     option &add_option(std::string opt);
@@ -226,7 +226,7 @@ option &parser::add_option_internal(std::string longoption,
     return opt;
 }
 //----------------------------------------------------------------------------
-void parser::eat_arguments(unsigned int argc, char const *argv[]) {
+void parser::eat_arguments(unsigned int argc, char  *argv[]) {
     unsigned int idx_ctr = 0;
     for (auto &opt : m_options) {
         idx[opt.m_dest] = idx_ctr;
